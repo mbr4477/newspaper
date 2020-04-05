@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>The Newspaper Times</title>
+        <link rel="stylesheet" href="../styles/newspaper.css"/>
+    </head>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <div id="app" class="np page">
+            <header>
+                <h1 class="np header title">{{ title }}</h1>
+                <div class="np header dateline">{{ dateline }}</div>
+                <hr/>
+            </header>
+            <section class="np articles">
+                <article 
+                    class="np article col" 
+                    v-bind:class="['cols-' + art.cols || 1, 'rows-' + art.rows || 1]" 
+                    v-for="art in articles">
+                    <h2 
+                        class="np article title" 
+                        v-bind:class="{ big: art.big }">
+                        {{ art.headline }}
+                    </h2>
+                    <div v-if="art.image !== undefined">
+                        <img class="np article image" v-bind:src="art.image"/>
+                        <div class="np article image-caption">{{ art.caption }}</div>
+                    </div>
+                    <div class="np article byline">{{ art.byline }}</div>
+                    <div class="np article body">
+                        {{ art.content }}
+                    </div>
+                </article>
+            </section>
+            <footer class="np footer">
+                <hr/>
+                <div class="np footer copyright">Copyright 2020, Matthew Russell</div>
+            </footer>
+        </div>
+        <script src="js/frontpage.js"></script>
+    </body>
+</html>

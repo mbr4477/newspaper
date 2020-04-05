@@ -1,0 +1,131 @@
+@font-face {
+    font-family: Chomsky;
+    src: url(../fonts/chomsky/Chomsky.otf);
+}
+
+@page {
+    size: letter;
+}
+
+.np.page {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+}
+
+h1.np.header.title {
+    font-family: 'Chomsky';
+    font-size: 4em;
+    font-weight: normal;
+    text-align: center;
+    margin: 1em 0 0 0;
+}
+
+.np.header.dateline {
+    text-transform: uppercase;
+    font-size: 0.75em;
+    text-align: right;
+}
+
+hr {
+    border: 0.5px solid #eee;
+}
+
+.np.articles {
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-columns: 100px;
+    gap: 20px;
+    grid-auto-flow: row;
+    margin: 10px;
+}
+
+.np.article {
+    display: inline-block;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    box-sizing: initial;
+}
+
+.np.article.title {
+    font-size: 2em;
+    margin-top: 0em;
+    margin-bottom: 0.25em;
+    display: block;
+}
+
+.np.article.image {
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+
+.np.article.image-caption {
+    color: #888;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-bottom: 1em;
+}
+
+.np.article.title.big {
+    font-size: 4em;
+    text-transform: uppercase;
+}
+
+.np.article.byline {
+    font-style: italic;
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+.np.article.body {
+    column-count: auto;
+    column-width: 200px;
+    column-gap: 10px;
+    text-align: justify;
+    line-height: 1.25em;
+}
+
+.np.articles .np.cols-1 {
+    grid-column: auto;
+}
+
+.np.articles .np.cols-2 {
+    grid-column: auto / span 2;
+}
+
+.np.articles .np.cols-3 {
+    grid-column: auto / span 3;
+}
+
+.np.articles .np.cols-4 {
+    grid-column: auto / span 4;
+}
+
+.np.articles .np.rows-1 {
+    grid-row: auto;
+}
+
+.np.articles .np.rows-2 {
+    grid-row: auto / span 2;
+}
+
+.np.articles .np.rows-3 {
+    grid-row: auto / span 3;
+}
+
+.np.articles .np.rows-4 {
+    grid-row: auto / span 4;
+}
+
+.np.footer {
+    margin-top: 2em;
+}
+
+.np.footer.copyright {
+    text-align: center;
+    font-size: 0.75em;
+}
